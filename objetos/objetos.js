@@ -14,3 +14,13 @@ console.log("*************************")
 const chaves = ["nome", "idade", "cpf", "email"]
 console.log(cliente[chaves[0]])
 chaves.forEach(info=>console.log(cliente[info]))
+
+
+console.log("*************************")
+//***************Adicionando e deletando campos do objeto
+cliente.telefone = "8899130131"//adcionando o campo telefone e atribuindo um valo a ele
+
+console.log(cliente)
+delete cliente.cpf//deletando o campo cpf
+delete cliente.idade
+console.log(cliente)
