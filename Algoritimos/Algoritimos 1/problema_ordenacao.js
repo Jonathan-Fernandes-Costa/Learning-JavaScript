@@ -6,7 +6,7 @@ for(let i = 0; i < livros.length; i++){
         menor = i
     }
 }
-for(let i = 0; i < livros.length; i++){ 
+for(let i = 0; i < livros.length; i++){ cd
     if(livros[i].preco > livros[maior].preco){
         maior = i
     }
