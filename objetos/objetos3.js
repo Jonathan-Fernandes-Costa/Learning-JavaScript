@@ -105,4 +105,4 @@ const clientes = [{//Objeto Literal
 ]
 const ListaDependentes = [...cliente.familia]
 console.log(ListaDependentes)
-
+console.log(cliente.familia)
