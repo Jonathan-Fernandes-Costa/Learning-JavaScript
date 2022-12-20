@@ -1,4 +1,4 @@
-const {edFolha, edGalho} = require("./arrays.js")
+const {edFolha, edGalho} = require("./arrays1.js")
 
 const arrayjunto = juntaArray(edFolha, edGalho)
 console.log(arrayjunto)
