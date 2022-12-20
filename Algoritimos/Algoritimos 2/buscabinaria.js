@@ -1,6 +1,6 @@
 const listaLivros = require("./arrayOrdenado.js")
 
-function busca(array, de, ate, valorbuscado){
+function busca(array, de, ate, valorbuscado){//Complexidade do algoritimo> OLog(n), que é mais perfomatica que a linear
     const meio = Math.floor((de+ate)/2)
     const atual = array[meio];
     if(de > ate){

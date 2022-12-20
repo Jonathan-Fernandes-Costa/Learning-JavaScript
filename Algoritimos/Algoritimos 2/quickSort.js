@@ -1,6 +1,8 @@
 const listaLivros = require("./arrays2.js")
 
-function quickSort(array, esquerda, direita) {
+function quickSort(array, esquerda, direita) {//Complexidade> linearxlogaritimica, que é muito mais perfomatica que a
+    //de complexidade quadratica como a insertion e select
+    //QuickSort é mais rapido que o mergesort na maioria dos casos
     if (array.length > 1) {
         let indiceAtual = particiona(array, esquerda, direita);
         if (esquerda < indiceAtual - 1) {

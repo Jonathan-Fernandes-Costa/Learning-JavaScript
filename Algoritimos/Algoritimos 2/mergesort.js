@@ -1,6 +1,7 @@
 const listalivros = require("./arrays2.js")
 console.log(listalivros)
-function mergesort(array){
+function mergesort(array){//Complexidade> linearxlogaritimica, que é muito mais perfomatica que a
+    //de complexidade quadratica como a insertion e select
     
     if(array.length > 1){
         let meio = Math.floor(array.length/2)
