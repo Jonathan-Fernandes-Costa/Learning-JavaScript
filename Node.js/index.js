@@ -17,7 +17,7 @@ async function pegaarquivo(caminhoArquivo){
     try{
         const encoding = 'utf-8';//Tipo de texto que o readfile vai receber 
         const texto = await fs.promises.readFile(caminhoArquivo, encoding)
-        console.log(extraiLinks(texto))
+        return extraiLinks(texto);
     }catch(erro){
         trataerro(erro)
     }finally{
@@ -29,7 +29,8 @@ function extraiLinks(texto){
     const capturas = [...texto.matchAll(regex)]
      const resultados = capturas.map((captura) => ({[captura[1]] : captura[2]
     }))
-    return resultados; 
+    return resultados.length !==0 ? resultados : "Não há links no arquivo";
 }
 pegaarquivo("./texto.md");
 // Expresão Regular: \[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)
+export default pegaarquivo;
