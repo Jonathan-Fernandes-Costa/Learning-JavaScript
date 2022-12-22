@@ -31,6 +31,5 @@ function extraiLinks(texto){
     }))
     return resultados.length !==0 ? resultados : "Não há links no arquivo";
 }
-pegaarquivo("./texto.md");
 // Expresão Regular: \[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)
 export default pegaarquivo;
