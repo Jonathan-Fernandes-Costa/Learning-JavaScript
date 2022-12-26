@@ -7,18 +7,17 @@ const caminho = process.argv;
 function imprimir(valida, lista, identificador = ''){
     if(valida){
     console.log(chalk.yellow('Lista Validada'),
-    chalk.black.bgGreen(identificador),
-    listaValidada(lista))
+    chalk.black.bgGreen(identificador), listaValidada(lista));
     }else{
         console.log(chalk.yellow('Links: '),
      chalk.black.bgGreen(identificador),
-      resultado)
+      lista)
     }
     
 }
-async function processaTexto(argumentos){
+async function processaTexto(argumentos){// Recebe os argumentos do console e retorna e imprime a lista de links com os titulos
     const caminho = argumentos[2];
-    const valida = argumentos[3]
+    const valida = argumentos[3] === '--valida';
     try{
         fs.lstatSync(caminho);
     }catch(erro){
@@ -30,12 +29,12 @@ async function processaTexto(argumentos){
 
     if(fs.lstatSync(caminho).isFile()){
     const resultado = await pegaarquivo(caminho);
-    imprimir(resultado)
+    imprimir(valida, resultado)
     }else if (fs.lstatSync(caminho).isDirectory()){
         const arquivos = await fs.promises.readdir(caminho)
         arquivos.forEach(async(nomearquivo) => {
             const lista = await pegaarquivo(`${caminho}/${nomearquivo}`)
-            imprimir(lista, nomearquivo)
+            imprimir(valida, lista, nomearquivo)
         })
     }
     

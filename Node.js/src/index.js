@@ -13,7 +13,7 @@ function trataerro(erro){
 } */
 
 // async/await (mais novo), mais simples de converter codigos sincronos em assicronos
-async function pegaarquivo(caminhoArquivo){
+async function pegaarquivo(caminhoArquivo){//Função que recebe o caminho do arquivo e retorna os links que estão dentro do arquivo md
     try{
         const encoding = 'utf-8';//Tipo de texto que o readfile vai receber 
         const texto = await fs.promises.readFile(caminhoArquivo, encoding)
@@ -24,7 +24,7 @@ async function pegaarquivo(caminhoArquivo){
         console.log(chalk.bgYellow("Operação finalizado"))
     }
 }
-function extraiLinks(texto){
+function extraiLinks(texto){//Função que pega um texto e retorna um aray de objetos com links
     const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
     const capturas = [...texto.matchAll(regex)]
      const resultados = capturas.map((captura) => ({[captura[1]] : captura[2]
