@@ -1,3 +1,4 @@
+//Esse arquivo recebe um array de links, transforma em URLs e faz a verificação sem a Url está funcionando, retornando um array de objetos, com cada objeto contendo o link e o status dele.
 async function verStatus(listaDeUrls) {
     const arrStatus = await Promise.all(listaDeUrls.map(async (url) => {
             try {
