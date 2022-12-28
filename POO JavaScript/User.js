@@ -27,9 +27,14 @@ export default class User {
     get ativo(){
         return this.#ativo;
     }
-
+    set email(novoemail){//Set permite fazer alterações
+        if(novoemail === ''){
+            throw new Error("O campo email não pode estar vazio")
+        }
+        this.#email = novoemail
+    }
     exibirInfos() {
-        return `${objuser.nome}, ${objuser.email}, ${objuser.nascimento}, ${objuser.cargo}, ${objuser.ativo}`
+        return `${this.nome}, ${this.email}, ${this.nascimento}, ${this.cargo}, ${this.ativo}`
     }
     
 }

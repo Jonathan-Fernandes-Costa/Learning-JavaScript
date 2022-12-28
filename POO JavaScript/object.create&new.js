@@ -1,3 +1,4 @@
+//METODOS ANTIGOS PARA LIDAR COM POO
 function User(nome, email){//Criando a classe USER
     this.nome = nome
     this.email = email

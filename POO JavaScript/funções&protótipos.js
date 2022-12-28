@@ -1,3 +1,4 @@
+//METODOS ANTIGOS PARA LIDAR COM POO
 //Usando o "this"
 const user = {
     nome: "joan",
